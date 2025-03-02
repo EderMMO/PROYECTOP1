@@ -9,11 +9,11 @@
 - **React Native**: Framework utilizado para el desarrollo multiplataforma.
 - **React Navigation**: Para la gestión de la navegación dentro de la app.
 - **React Context**: Para el manejo del estado global de la aplicación.
-- **Firebase / Backend**: (Si aplica, menciona la tecnología que estés utilizando para el backend o almacenamiento de datos).
+  
 
 ---
 
-## 📱 Características
+## 📱 Screens
 
 - **Login**: Los usuarios pueden registrarse e iniciar sesión para guardar su información y realizar pedidos de manera más rápida.
 - **Ordenar Pizzas**: El usuario puede seleccionar y personalizar su pizza (tamaño, ingredientes, etc.).
@@ -22,11 +22,4 @@
 
 ---
 
-## 🚀 Instalación
 
-### 1. Clonar el repositorio
-
-Primero, clona este repositorio en tu máquina local:
-
-```bash
-git clone https://github.com/TU_USUARIO/NOMBRE_DEL_REPO.git
