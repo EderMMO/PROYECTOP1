@@ -18,7 +18,7 @@
 - **Login**: Los usuarios pueden registrarse e iniciar sesión para guardar su información y realizar pedidos de manera más rápida.
 - **Ordenar Pizzas**: El usuario puede seleccionar y personalizar su pizza (tamaño, ingredientes, etc.).
 - **Ver Órdenes**: Los usuarios pueden visualizar las órdenes anteriores y su estado actual.
-- **Interfaz de Usuario Amigable**: La app tiene una interfaz fácil de usar y moderna para una experiencia óptima.
+
 
 ---
 
