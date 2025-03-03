@@ -10,29 +10,30 @@ export default function MenupScreen(props) {
     }, [navigation]);
 
     const goToOrders = () => {
-        navigation.navigate("Orders");
+        navigation.replace("Orders");
     };
     const goToCustomers = () => {
-        navigation.navigate("Customer");
+        navigation.replace("Customer");
     };
     const goToLogin = () => {
-        navigation.navigate("Login");
+        navigation.replace("Login");
     };
     const goToUs = () => {
-        navigation.navigate("US");
+        navigation.replace("US");
     };
 
     return (
         <ImageBackground 
-            source={require('../images/fondo2.jpeg')} 
+            source={require('../images/fondo2.jpeg')} // Asegúrate de que la ruta sea correcta
             style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}
         >
+            {/* Título en la parte superior */}
             <Text style={{
                 fontSize: 30,
                 fontWeight: 'bold',
                 color: '#fff',
                 position: 'absolute',
-                top: 40, 
+                top: 40, // Para ponerlo justo abajo del borde superior
                 textAlign: 'center',
                 width: '100%',
             }}>
@@ -40,6 +41,7 @@ export default function MenupScreen(props) {
             </Text>
 
             <SafeAreaView style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+                {/* Botón Employees */}
                 <TouchableOpacity 
                     onPress={goToOrders} 
                     style={{ backgroundColor: '#4A90E2', padding: 15, borderRadius: 10, width: '60%', alignItems: 'center', marginVertical: 10 }}
@@ -47,6 +49,7 @@ export default function MenupScreen(props) {
                     <Text style={{ color: '#fff', fontSize: 18, fontWeight: 'bold' }}>Employees</Text>
                 </TouchableOpacity>
 
+                {/* Botón Customers */}
                 <TouchableOpacity 
                     onPress={goToCustomers} 
                     style={{ backgroundColor: '#50C878', padding: 15, borderRadius: 10, width: '60%', alignItems: 'center', marginVertical: 10 }}
@@ -54,6 +57,7 @@ export default function MenupScreen(props) {
                     <Text style={{ color: '#fff', fontSize: 18, fontWeight: 'bold' }}>Customers</Text>
                 </TouchableOpacity>
 
+                {/* Botón Customers */}
                 <TouchableOpacity 
                     onPress={goToUs} 
                     style={{ backgroundColor: '#000', padding: 15, borderRadius: 10, width: '60%', alignItems: 'center', marginVertical: 10 }}
@@ -61,6 +65,7 @@ export default function MenupScreen(props) {
                     <Text style={{ color: '#fff', fontSize: 18, fontWeight: 'bold' }}>US</Text>
                 </TouchableOpacity>
 
+                {/* Botón Exit */}
                 <TouchableOpacity 
                     onPress={goToLogin} 
                     style={{

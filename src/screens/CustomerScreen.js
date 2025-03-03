@@ -11,7 +11,7 @@ export default function OrderScreen(props) {
 
     const goToMenu = () => navigation.navigate("Menu");
     const goToOrder = () => navigation.navigate("Order");
-    const goToMenup = () => navigation.navigate("Menup");
+    const goToLogin = () => navigation.navigate("Login");
 
     return (
         <ImageBackground source={require('../images/customer.jpeg')} style={styles.background}>
@@ -25,7 +25,7 @@ export default function OrderScreen(props) {
                 <TouchableOpacity style={styles.button} onPress={goToOrder}>
                     <Text style={styles.buttonText}>Order</Text>
                 </TouchableOpacity>
-                <TouchableOpacity style={styles.exitButton} onPress={goToMenup}>
+                <TouchableOpacity style={styles.exitButton} onPress={goToLogin}>
                     <Text style={styles.buttonText}>Exit</Text>
                 </TouchableOpacity>
             </SafeAreaView>

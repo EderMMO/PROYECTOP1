@@ -57,11 +57,11 @@ const styles = StyleSheet.create({
         color: '#fff',
     },
     menuContainer: {
-        marginTop: 100, 
+        marginTop: 100, // Aumenta el espacio entre el título y el menú
         alignItems: 'center',
     },
     menuSpacing: {
-        marginTop: 20, 
+        marginTop: 20, // Añade espacio antes del primer elemento del menú
     },
     pizzaText: {
         fontSize: 20,

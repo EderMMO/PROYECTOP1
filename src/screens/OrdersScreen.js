@@ -1,34 +1,45 @@
-import React, { useState, useContext } from 'react'; 
+import React, { useState, useContext, useLayoutEffect } from 'react';
 import { View, Text, SafeAreaView, TextInput, Alert, ImageBackground, TouchableOpacity, StyleSheet } from 'react-native';
 import { Picker } from '@react-native-picker/picker';
 import { OrdersContext } from '../context/OrdersContext';
-import { useLayoutEffect } from 'react';
 
 export default function OrdersScreen({ navigation }) {
     useLayoutEffect(() => {
         navigation.setOptions({ headerShown: false });
     }, [navigation]);
+    
     const { orders, setOrders } = useContext(OrdersContext);
     const [type, setType] = useState("EXTRAVAGANZA");
     const [size, setSize] = useState("");
-    const [amount, setAmount] = useState("");
-
-    const pizzaOptions = ["EXTRAVAGANZA", "DELUXE", "CHICKEN HAWAIANA", "HONOLULU", "TRIPLE PEPPERONI", "MEXICAN"];
+    const [amount, setAmount] = useState("1");
     
-    const goToMenup = () => navigation.navigate("Menup");
+    const pizzaPrices = {
+        "EXTRAVAGANZA": 300,
+        "DELUXE": 299,
+        "CHICKEN HAWAIANA": 270,
+        "HONOLULU": 250,
+        "TRIPLE PEPPERONI": 260,
+        "MEXICAN": 240
+    };
+    
+    const pizzaOptions = Object.keys(pizzaPrices);
+    
+    const totalPrice = (pizzaPrices[type] * (parseInt(amount) || 0)).toFixed(2);
+    
+    const goToLogin= () => navigation.replace("Login");
     
     const saveOrder = () => {
-        if (!size.trim() || !amount.trim()) {
-            Alert.alert("Error", "All fields are required.");
+        if (!size.trim() || !amount.trim() || parseInt(amount) <= 0) {
+            Alert.alert("Error", "All fields are required and amount must be at least 1.");
             return;
         }
         
-        setOrders([...orders, { type, size, amount }]);
+        setOrders([...orders, { type, size, amount, totalPrice }]);
         setSize("");
-        setAmount("");
+        setAmount("1");
         navigation.navigate("Order");
     };
-
+    
     return (
         <ImageBackground source={require('../images/Orders.jpeg')} style={styles.background}>
             <SafeAreaView style={styles.container}>
@@ -51,10 +62,11 @@ export default function OrdersScreen({ navigation }) {
                     keyboardType="numeric" 
                     style={styles.input} 
                 />
+                <Text style={styles.priceText}>Total Price: ${totalPrice}</Text>
                 <TouchableOpacity style={styles.button} onPress={saveOrder}>
                     <Text style={styles.buttonText}>Save Order</Text>
                 </TouchableOpacity>
-                <TouchableOpacity style={styles.buttonSecondary} onPress={goToMenup}>
+                <TouchableOpacity style={styles.buttonSecondary} onPress={goToLogin}>
                     <Text style={styles.buttonText}>Exit</Text>
                 </TouchableOpacity>
             </SafeAreaView>
@@ -91,6 +103,12 @@ const styles = StyleSheet.create({
         backgroundColor: 'rgba(255, 255, 255, 0.8)',
         padding: 10,
         borderRadius: 10,
+        marginBottom: 10,
+    },
+    priceText: {
+        fontSize: 18,
+        fontWeight: 'bold',
+        color: '#fff',
         marginBottom: 10,
     },
     button: {

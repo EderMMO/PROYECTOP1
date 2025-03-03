@@ -9,8 +9,8 @@ export default function UsScreen(props) {
         navigation.setOptions({ headerShown: false });
     }, [navigation]);
 
-    const goToMenup = () => {
-        navigation.navigate("Menup");
+    const goToLogin = () => {
+        navigation.navigate("Login");
     }
 
     return (
@@ -43,7 +43,7 @@ export default function UsScreen(props) {
                 </View>
 
                 <View style={styles.exitButton}>
-                    <Button onPress={goToMenup} title="Exit" color="red" />
+                    <Button onPress={goToLogin} title="Exit" color="red" />
                 </View>
             </SafeAreaView>
         </ImageBackground>

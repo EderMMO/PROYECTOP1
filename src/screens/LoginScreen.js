@@ -19,7 +19,7 @@ export default function LoginScreen(props) {
 
     const goToMenup = () => {
         if (user === user1 && password === password1 || user === user2 && password === password2 || user === user3 && password === password3) {
-            navigation.navigate("Menup");
+            navigation.replace("Menup");
         } else {
             Alert.alert("Error", "Incorrect username and/or password");
         }
