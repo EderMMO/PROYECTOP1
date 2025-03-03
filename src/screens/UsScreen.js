@@ -10,7 +10,7 @@ export default function UsScreen(props) {
     }, [navigation]);
 
     const goToMenup = () => {
-        navigation.replace("Menup");
+        navigation.navigate("Menup");
     }
 
     return (

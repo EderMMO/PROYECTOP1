@@ -9,7 +9,7 @@ export default function MenuScreen(props) {
         navigation.setOptions({ headerShown: false });
     }, [navigation]);
 
-    const goToMenup = () => navigation.replace("Menup");
+    const goToMenup = () => navigation.navigate("Menup");
 
     return (
         <ImageBackground source={require('../images/menu.png')} style={styles.background}>
@@ -57,11 +57,11 @@ const styles = StyleSheet.create({
         color: '#fff',
     },
     menuContainer: {
-        marginTop: 100, // Aumenta el espacio entre el título y el menú
+        marginTop: 100, 
         alignItems: 'center',
     },
     menuSpacing: {
-        marginTop: 20, // Añade espacio antes del primer elemento del menú
+        marginTop: 20, 
     },
     pizzaText: {
         fontSize: 20,
